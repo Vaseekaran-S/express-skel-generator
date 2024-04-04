@@ -1,0 +1,15 @@
+
+// Get Request
+const getReq = (req, res)=> {
+    res.send("Hi")
+}
+
+// Post Request
+const postReq = (req, res)=> {
+    res.send("Hello")
+}
+
+module.exports = {
+    getReq,
+    postReq
+}

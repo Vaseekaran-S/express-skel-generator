@@ -1,0 +1,16 @@
+
+const express = require('express')
+const app = express();
+
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
+
+// Test route
+const testRouter = require("./routes/test.routes")
+app.use("/", testRouter)
+
+
+app.listen(3000,()=>{
+    console.log("Server Running http://localhost:3000");
+})
