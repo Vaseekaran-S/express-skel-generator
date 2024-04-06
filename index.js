@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const fs = require('fs').promises; // Importing fs module with promises
 
 // Creating required folders for express application
@@ -19,7 +21,7 @@ async function createFolders() {
 // Create a app.js file to handle requests
 async function createAppFile() {
     try {
-        const data = await fs.readFile('./app.txt', 'utf8');
+        const data = await fs.readFile(__dirname+'/app.txt', 'utf8');
         await fs.writeFile('./app.js', data);
         console.log("Created app.js file");
     } catch (err) {
@@ -30,7 +32,7 @@ async function createAppFile() {
 // Create a test.controllers.js file
 async function createControllerFile() {
     try {
-        const data = await fs.readFile('./controllers.txt', 'utf8');
+        const data = await fs.readFile(__dirname+'/controllers.txt', 'utf8');
         await fs.writeFile('./controllers/test.controller.js', data);
         console.log("Created dummy controller file");
     } catch (err) {
@@ -41,7 +43,7 @@ async function createControllerFile() {
 // Create a test.routes.js file
 async function createRoutesFile() {
     try {
-        const data = await fs.readFile('./routes.txt', 'utf8');
+        const data = await fs.readFile(__dirname+'/routes.txt', 'utf8');
         await fs.writeFile('./routes/test.routes.js', data);
         console.log("Created dummy routes file");
     } catch (err) {
